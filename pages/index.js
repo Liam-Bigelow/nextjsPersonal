@@ -1,28 +1,29 @@
 import Head from "next/head";
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import FeedbackForm from "@components/FeedbackForm";
-import JokeBlock from "@components/JokeBlock";
 
 export default function Home() {
   return (
-    <div className="container">
-      <Head>
-        <title>Next.js Toolbox</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div>
+        <Head>
+            <title>Liam Bigelow</title>
+            <link rel="icon" href="/favicon.ico" />
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+            />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+        </Head>
 
-      <main>
-        <Header title="Next.js Toolbox" />
-        <hr />
-        <p className="description">
-          Here's an example of a Netlify Form! When you fill this out, the
-          submissions can be found in the Netlify Admin site.
-        </p>
-        <FeedbackForm />
-        <JokeBlock />
-      </main>
-      <Footer />
+        <main>
+            <div className="landing-page valign-wrapper">
+                <div className="card-panel" style={{paddingBottom: '150px', minWidth: "700px"}}>
+                    <h2>Hi 👋!</h2>
+                    <h2>I'm Liam Bigelow</h2>
+                    <h5>Software Developer + Math Enthusiast</h5>
+                </div>
+            </div>
+        </main>
     </div>
   );
 }
