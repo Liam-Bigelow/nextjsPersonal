@@ -1,0 +1,25 @@
+
+
+.plant-row {
+    background-color: #1f5c70;
+    color: #fff;
+    padding: 15px;
+    margin: 10px 10px 0 10px;
+}
+
+.plant-tab {
+    background-color: #b29476;
+    color: #fff;
+    padding: 15px;
+    margin: 0 10px 20px;
+    width: 230px;
+    text-align: center;
+    border-radius: 0  0  15px 15px;
+}
+
+.plant-img {
+    width: 100%;
+    max-width: 160px;
+    border: 5px solid #fcb649;
+}
+

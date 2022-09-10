@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import PlantPage from '@components/PlantPage'
+
 export default function Home() {
   return (
     <div>
@@ -23,6 +25,9 @@ export default function Home() {
                     <h5>Software Developer + Math Enthusiast</h5>
                 </div>
             </div>
+            <section className="container">
+                <PlantPage />
+            </section>
         </main>
     </div>
   );
