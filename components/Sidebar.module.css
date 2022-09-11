@@ -1,0 +1,33 @@
+
+
+.sidebar {
+    top: 0;
+    width: 400px;
+    position: sticky;
+    height: 0;
+}
+
+.sidebar-content {
+    height: 100vh;  
+    background-color: #E3D6C9; 
+    border-right: 5px solid black
+}
+
+.sidebar-nav {
+    border: 0;
+    font-size: 30px;
+    cursor: pointer;
+    background: #1f5c70 !important;
+    border-radius: 5px;
+    padding: 10px 10px 5px 10px;
+    color: white;
+    margin: 10px;
+}
+
+.sidebar-btn {
+    background: transparent !important;
+    border: 0;
+    font-size: 50px;
+    cursor: pointer;
+    color: #1f5c70
+}
