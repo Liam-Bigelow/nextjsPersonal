@@ -1,6 +1,8 @@
 
 import styles from './PlantRow.module.css'
 
+import PlantMonitorChart from '@components/PlantMonitorChart'
+
 export default function PlantRow({title, image, graph}) {
 
 
@@ -14,6 +16,7 @@ export default function PlantRow({title, image, graph}) {
                     </div>
                     <div className="col s9" style={{backgroundColor: "#fff", height: "100% !important"}}>
                         {/* graph of plant health */}
+                        <PlantMonitorChart />
                     </div>
                 </div>
             </div>

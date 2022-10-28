@@ -1,0 +1,16 @@
+
+
+.plant-v1 {
+    display: inline-flex;
+    margin-bottom: 15px;
+}
+
+.plant-v1 > img {
+    width: 50%;
+    margin: 5px 10px;
+}
+
+.plant-v1 > div {
+    width: 50%;
+    margin: 5px 10px;
+}
