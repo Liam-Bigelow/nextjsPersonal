@@ -3,7 +3,7 @@ import styles from './Sidebar.module.css'
 import { FaTimes, FaBars } from "react-icons/fa";
 import { useState } from "react";
 
-export default function Sidebar() {
+export default function Sidebar({ idsToScrollTo }) {
 
     const [isActive, setIsActive] = useState( false );
 
@@ -37,6 +37,16 @@ export default function Sidebar() {
                         <button className={styles["sidebar-btn"]} onClick={handleClose}>
                             <FaTimes />
                         </button>
+                    </div>
+                    <div className={styles["sidebar-item-list"]}>
+                        { 
+                            ( !!idsToScrollTo && idsToScrollTo.length > 0 ) && 
+                                idsToScrollTo.map( ( id ) => {
+                                    return <>
+                                        <a href={"#" + id }> BOOM </a>
+                                    </>
+                                })
+                        }
                     </div>
                 </div>
             </div>

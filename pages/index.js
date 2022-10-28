@@ -20,8 +20,8 @@ export default function Home() {
             </Head>
 
             <main>
-                <Sidebar />
-                <div className="landing-page valign-wrapper">
+                <Sidebar idsToScrollTo={["intro"]}  />
+                <div id="intro" className="landing-page valign-wrapper">
                     <div className="card-panel" style={{paddingBottom: '150px', minWidth: "700px"}}>
                         <h2 style={{display: "flex", justifyContent: "center"}}>Hi <div className="shake">👋</div>!</h2>
                         <h2>I'm Liam Bigelow</h2>

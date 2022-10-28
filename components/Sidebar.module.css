@@ -31,3 +31,29 @@
     cursor: pointer;
     color: #1f5c70
 }
+
+.sidebar-item-list {
+    margin: 15px 30px;
+}
+
+.sidebar-item-list > a {
+    font-size: 1.5em;
+    font-weight: 800;
+    background-color: #FFFF;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-flex;
+    width: 100%;
+    color: #1f5c70;
+}
+
+.sidebar-item-list > a:hover{
+    font-size: 1.5em;
+    font-weight: 800;
+    background-color: #FBA01D;
+    color: #FFF;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-flex;
+    width: 100%;
+}
