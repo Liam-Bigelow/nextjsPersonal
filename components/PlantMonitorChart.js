@@ -1,7 +1,20 @@
 
 import styles from './PlantMonitorChart.module.css'
 
-export default function PlantPage() {
+import { useState, useEffect } from 'react';
+
+export default function PlantMonitorChart() {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('/api/getPlantData')
+            .then(res => res.json())
+            .then(plantJson=> {
+                setData(plantJson)
+            })
+    }, []);
+    
 
     return (
         <div className={styles["heart-rate"]}>
