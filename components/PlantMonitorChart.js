@@ -25,12 +25,14 @@ ChartJS.register(
     Legend
 );
 
-export default function PlantMonitorChart() {
+export default function PlantMonitorChart({plantKey}) {
 
     const [data, setData] = useState({});
+    const fromDate = new Date();
+    fromDate.setMonth( fromDate.getMonth() - 1 );
 
     useEffect(() => {
-        fetch('/api/getPlantData')
+        fetch(`/api/getPlantData?fromDate=${fromDate.toUTCString()}&plant=${plantKey}`)
             .then(res => res.json())
             .then( plantDocs => {
 
@@ -81,7 +83,6 @@ export default function PlantMonitorChart() {
         },
     });
     
-
     return (
         <>
             {

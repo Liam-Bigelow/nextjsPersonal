@@ -3,7 +3,7 @@ import styles from './PlantRow.module.css'
 
 import PlantMonitorChart from '@components/PlantMonitorChart'
 
-export default function PlantRow({title, image, graph}) {
+export default function PlantRow({title, image, plantKey}) {
 
 
     return (
@@ -16,7 +16,7 @@ export default function PlantRow({title, image, graph}) {
                     </div>
                     <div className="col s9" style={{backgroundColor: "#fff", height: "100%", padding: "15px"}}>
                         {/* graph of plant health */}
-                        <PlantMonitorChart />
+                        <PlantMonitorChart plantKey={plantKey} />
                     </div>
                 </div>
             </div>

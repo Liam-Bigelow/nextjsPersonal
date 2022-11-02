@@ -9,9 +9,12 @@ const clientPromise = mongoClient.connect();
 
 export const handler = async (event) => {
     try {
-        const database = (await clientPromise).db(process.env.MONGODB_DATABASE);
-        const collection = database.collection(process.env.MONGODB_COLLECTION);
-        const results = await collection.aggregate([
+        // get query parameters
+        const plantKey = event.queryStringParameters["plant"];
+        const fromDate = new Date( event.queryStringParameters["fromDate"] );
+
+        // build aggregae pipeline
+        var aggregatePipeline = [
             {
                 $project:
                 {
@@ -31,8 +34,35 @@ export const handler = async (event) => {
                     humidity: { $avg: "$humi" } ,
                 }
             }
-        ]).limit(10).toArray();
+        ];
 
+        if( plantKey ){
+            aggregatePipeline = [
+                {
+                    "$match": {
+                        "plant": plantKey
+                    }
+                },
+                ...aggregatePipeline
+            ]
+        }
+        if( fromDate ){
+            aggregatePipeline = [
+                {
+                    "$match": {
+                        "date": { "$gt": fromDate }
+                    }
+                },
+                ...aggregatePipeline
+            ]
+        }
+
+        // query database
+        const database = (await clientPromise).db(process.env.MONGODB_DATABASE);
+        const collection = database.collection(process.env.MONGODB_COLLECTION);
+        const results = await collection.aggregate(aggregatePipeline).limit(10).toArray();
+
+        // return standard http response
         return {
             statusCode: 200,
             body: JSON.stringify(results),

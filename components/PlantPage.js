@@ -7,10 +7,10 @@ import PlantRow from '@components/PlantRow'
 export default function PlantPage() {
 
     const [plants, setPlants] = useState([
-        {image: "./haworthsAenium.jpg", title: "Haworth's Aenium" },
-        {image: "./songOfIndia.jpg", title: "Song of India" },
-        {image: "./alliumStrictum.jpg", title: "Allium Strictum" },
-        {image: "./chineseMoneyPlant.jpg", title: "Chinese Money Plant" },
+        {image: "./haworthsAenium.jpg", title: "Haworth's Aenium", plantKey: "HaworthsAenium" },
+        {image: "./songOfIndia.jpg", title: "Song of India", plantKey: "SongOfIndia" },
+        {image: "./alliumStrictum.jpg", title: "Allium Strictum", plantKey: "AlliumStrictum" },
+        {image: "./chineseMoneyPlant.jpg", title: "Chinese Money Plant", plantKey: "ChineseMoneyPlant"},
     ])
 
 
@@ -41,7 +41,7 @@ export default function PlantPage() {
             <h3 style={{fontWeight: 700}}><span>v2.0</span> - Here are my plants! 🌱</h3>
             { 
                 plants.map( (pl) => {
-                    return <PlantRow image={pl.image} title={pl.title} />;
+                    return <PlantRow key={pl.plantKey} image={pl.image} title={pl.title} plantKey={pl.plantKey} />;
                 })
             }
         </div>
