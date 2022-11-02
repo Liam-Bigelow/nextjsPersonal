@@ -89,7 +89,7 @@ export default function PlantMonitorChart() {
             {
                 ( !!data && Object.keys( data ).length > 0 ) ? 
                     <div>
-                        <Line options={options} data={data} />;
+                        <Line options={options} data={data} />
                     </div> :
                     <div className={styles["heart-rate"]}>
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="73px" viewBox="0 0 150 73" xmlSpace="preserve">
