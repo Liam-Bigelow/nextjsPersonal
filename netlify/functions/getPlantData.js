@@ -8,8 +8,6 @@ const uri = "mongodb+srv://sensorHub:T4fOetgmACUOjcMi@cluster0.kewxbka.mongodb.n
 
 export const handler = (event, context, callback) => {
 
-    console.log( event );
-
     context.callbackWaitsForEmptyEventLoop = false;
 
     run()
@@ -21,37 +19,34 @@ export const handler = (event, context, callback) => {
 
 function run() {
     return co(function*() {
-
-        if (conn == null) {
-            conn = yield mongoose.createConnection(uri, {
-                bufferCommands: false,
-                bufferMaxEntries: 0
-            });
-            conn.model('reads', new mongoose.Schema({
-                moisture: Number,
-                humidity: Number,
-                temperature: Number,
-                plant: String,
-                date: {
-                    type: Date,
-                    default: Date.now,
-                    required: true
-                }
-            }));
-        }
-
-        const M = conn.model('reads');
-
-        const doc = M.find();
-
-        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        console.log( doc );
-
-
-        const response = {
-            statusCode: 200,
-            body: JSON.stringify(doc)
-        };
-        return response;
+        return new Promise( async (resolve, reject) => {
+            if (conn == null) {
+                conn = mongoose.createConnection(uri, {
+                    bufferCommands: false,
+                    bufferMaxEntries: 0
+                });
+                
+                conn.model('reads', new mongoose.Schema({
+                    moisture: Number,
+                    humidity: Number,
+                    temperature: Number,
+                    plant: String,
+                    date: {
+                        type: Date,
+                        default: Date.now,
+                        required: true
+                    }
+                }));
+            }
+    
+            const M = conn.model('reads');
+            const doc = await M.find();
+    
+            const response = {
+                statusCode: 200,
+                body: JSON.stringify(doc)
+            };
+            resolve( response );
+        });
     });
 }
