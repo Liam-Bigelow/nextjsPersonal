@@ -14,7 +14,7 @@ export default function PlantRow({title, image, graph}) {
                         {/* image of plant */}
                         <img src={image} className={styles["plant-img"]} />
                     </div>
-                    <div className="col s9" style={{backgroundColor: "#fff", height: "100% !important"}}>
+                    <div className="col s9" style={{backgroundColor: "#fff", height: "100%", padding: "15px"}}>
                         {/* graph of plant health */}
                         <PlantMonitorChart />
                     </div>
