@@ -84,35 +84,35 @@ export default function PlantMonitorChart({plantKey}) {
 
     const [options, setOptions] = useState({
         responsive: true,
-        animation: {
-            x: {
-              type: 'number',
-              easing: 'linear',
-              duration: delayBetweenPoints,
-              from: NaN, // the point is initially skipped
-              delay(ctx) {
-                if (ctx.type !== 'data' || ctx.xStarted) {
-                  return 0;
-                }
-                ctx.xStarted = true;
-                return ctx.index * delayBetweenPoints;
-              }
-            },
-            y: {
-              type: 'number',
-              easing: 'linear',
-              duration: delayBetweenPoints,
-              from: previousY,
-              delay(ctx) {
-                if (ctx.type !== 'data' || ctx.yStarted) {
-                  return 0;
-                }
-                ctx.yStarted = true;
-                return ctx.index * delayBetweenPoints;
-              }
-            }
-        },
         plugins: {
+            animation: {
+                x: {
+                  type: 'number',
+                  easing: 'linear',
+                  duration: delayBetweenPoints,
+                  from: NaN, // the point is initially skipped
+                  delay(ctx) {
+                    if (ctx.type !== 'data' || ctx.xStarted) {
+                      return 0;
+                    }
+                    ctx.xStarted = true;
+                    return ctx.index * delayBetweenPoints;
+                  }
+                },
+                y: {
+                  type: 'number',
+                  easing: 'linear',
+                  duration: delayBetweenPoints,
+                  from: previousY,
+                  delay(ctx) {
+                    if (ctx.type !== 'data' || ctx.yStarted) {
+                      return 0;
+                    }
+                    ctx.yStarted = true;
+                    return ctx.index * delayBetweenPoints;
+                  }
+                }
+            },
             legend: {
                 position: 'bottom',
             },
