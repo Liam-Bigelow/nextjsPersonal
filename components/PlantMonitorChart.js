@@ -46,9 +46,8 @@ export default function PlantMonitorChart() {
                     humData.push( doc.humidity );
                 }
 
-                setData(
-                {
-                    dateData,
+                setData({
+                    labels: dateData,
                     datasets: [
                         {
                             label: 'Temperature (C*)',
@@ -69,8 +68,7 @@ export default function PlantMonitorChart() {
                             backgroundColor: 'rgba(53, 162, 235, 0.5)',
                         },
                     ],
-                }
-                )
+                });
             })
     }, []);
 
