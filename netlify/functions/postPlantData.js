@@ -28,10 +28,10 @@ export const handler = async (event) => {
         // build document to insert
         const newDoc = {
             date: currentDate,
-            ...moisture,
-            ...humidity,
-            ...temperature,
-            ...plant
+            moisture,
+            humidity,
+            temperature,
+            plant
         }
 
         // query database
