@@ -16,6 +16,8 @@ export const handler = async (event) => {
         }
         const body = JSON.parse( event.body );
 
+        console.log( body );
+
         // get query parameters
         const currentDate = new Date();
         const moisture = body["moisture"];
