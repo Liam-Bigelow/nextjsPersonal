@@ -10,9 +10,6 @@ const clientPromise = mongoClient.connect();
 export const handler = async (event) => {
     try {
 
-        
-        console.log( event );
-
         // make sure a body was provided
         if( !event.body ){
             throw new Error( "missing request body" );
