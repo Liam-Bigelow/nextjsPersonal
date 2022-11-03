@@ -9,12 +9,20 @@ const clientPromise = mongoClient.connect();
 
 export const handler = async (event) => {
     try {
+
+        
+        console.log( event );
+
+        if( !event.body ){
+            throw new Error( "missing request body" );
+        }
+
         // get query parameters
         const currentDate = new Date();
-        const moisture = event.queryStringParameters["moisture"];
-        const humidity = event.queryStringParameters["humidity"];
-        const temperature = event.queryStringParameters["temperature"];
-        const plant = event.queryStringParameters["plant"];
+        const moisture = event.body["moisture"];
+        const humidity = event.body["humidity"];
+        const temperature = event.body["temperature"];
+        const plant = event.body["plant"];
 
         // build document to insert
         const newDoc = {
