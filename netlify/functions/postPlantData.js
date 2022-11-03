@@ -16,13 +16,14 @@ export const handler = async (event) => {
         if( !event.body ){
             throw new Error( "missing request body" );
         }
+        const body = JSON.parse( event.body );
 
         // get query parameters
         const currentDate = new Date();
-        const moisture = event.body["moisture"];
-        const humidity = event.body["humidity"];
-        const temperature = event.body["temperature"];
-        const plant = event.body["plant"];
+        const moisture = body["moisture"];
+        const humidity = body["humidity"];
+        const temperature = body["temperature"];
+        const plant = body["plant"];
 
         // build document to insert
         const newDoc = {
