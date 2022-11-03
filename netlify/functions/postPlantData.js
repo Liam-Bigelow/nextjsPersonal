@@ -20,9 +20,9 @@ export const handler = async (event) => {
 
         // get query parameters
         const currentDate = new Date();
-        const moisture = body["moisture"];
-        const humidity = body["humidity"];
-        const temperature = body["temperature"];
+        const moisture = parseFloat( body["moisture"] );
+        const humidity = parseFloat( body["humidity"] );
+        const temperature = parseFloat( body["temperature"] );
         const plant = body["plant"];
 
         // build document to insert
