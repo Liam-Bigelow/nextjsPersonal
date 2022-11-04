@@ -54,20 +54,21 @@ export default function PlantMonitorChart({plantKey}) {
                         {
                             label: 'Temperature (C*)',
                             data: tempData,
-                            borderColor: 'rgb(255, 99, 132)',
-                            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                            borderColor: '#e98b04',
+                            backgroundColor: '#FBA01D',
                         },
                         {
                             label: 'Humidity (%)',
                             data: humData,
-                            borderColor: 'rgb(53, 162, 235)',
-                            backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                            borderColor: '#1a4e5f',
+                            backgroundColor: '#1F5C70',
                         },
                         {
                             label: 'Moisture (%)',
                             data: moistDate,
-                            borderColor: 'rgb(53, 162, 235)',
-                            backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                            borderColor: '#a17d5a',
+                            backgroundColor: '#B29476',
+                            hidden: true,
                         },
                     ],
                 });
@@ -75,7 +76,6 @@ export default function PlantMonitorChart({plantKey}) {
     }, []);
 
     // setup animation for option
-    const totalDuration = 10000;
     const delayBetweenPoints = 1000;
     const previousY = (ctx) => {
         console.log( ctx );
