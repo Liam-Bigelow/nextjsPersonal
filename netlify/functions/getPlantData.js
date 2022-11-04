@@ -22,6 +22,7 @@ export const handler = async (event) => {
                     temp: "$temperature",
                     mois: "$moisture",
                     humi: "$humidity",
+                    rawDate: "$date",
                 }
             },
             {
@@ -31,8 +32,12 @@ export const handler = async (event) => {
                     date: { "$first": "$dateString" },
                     temperature: { $avg: "$temp" },
                     moisture: { $avg: "$mois" },
-                    humidity: { $avg: "$humi" } ,
+                    humidity: { $avg: "$humi" },
+                    rawDate: { "$first": "$rawDate" },
                 }
+            },
+            {
+                $sort: { "rawDate": 1 }
             }
         ];
 
