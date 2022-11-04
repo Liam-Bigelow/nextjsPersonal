@@ -5,6 +5,7 @@
     width: 400px;
     position: sticky;
     height: 0;
+    z-index: 10;
 }
 
 .sidebar-content {
@@ -45,6 +46,7 @@
     display: inline-flex;
     width: 100%;
     color: #1f5c70;
+    margin-bottom: 15px;
 }
 
 .sidebar-item-list > a:hover{

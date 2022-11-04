@@ -1,0 +1,32 @@
+import Head from "next/head";
+
+// pages
+import Sidebar from '@components/Sidebar'
+import PlantPage from '@components/PlantPage'
+
+
+export default function Plants() {
+
+    return (
+        <div>
+            <Head>
+                <title>Liam Bigelow</title>
+                <link rel="icon" href="/favicon.ico" />
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+                />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+            </Head>
+
+            <main>
+                <Sidebar />
+                <section className="container">
+                    <PlantPage />
+                </section>
+            </main>
+        </div>
+    );
+}

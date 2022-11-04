@@ -39,7 +39,9 @@ export default function Sidebar({}) {
                         </button>
                     </div>
                     <div className={styles["sidebar-item-list"]}>
-                        <a href={"#"}> BOOM </a>
+                        <a href={"/"}>🏠 Home</a>
+                        <a href={"/plants"}>🌱 My Plants</a>
+                        <a href={"/projects"}>🔨 My Projects</a>
                     </div>
                 </div>
             </div>

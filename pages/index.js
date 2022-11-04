@@ -22,7 +22,7 @@ export default function Home() {
             <main>
                 <Sidebar />
                 <div className="landing-page valign-wrapper">
-                    <div className="card-panel" style={{padding: "75px 150px 75px 75px", maxWidth: "700px"}}>
+                    <div className="card-panel" style={{padding: "75px 75px 100px 75px", maxWidth: "700px"}}>
                         <h2 style={{display: "flex", justifyContent: "center"}}>Hi <div className="shake">👋</div>!</h2>
                         <h2>I'm Liam Bigelow</h2>
                         <h5>Software Developer + Math Enthusiast</h5>
