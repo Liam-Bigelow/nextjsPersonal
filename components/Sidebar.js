@@ -40,6 +40,7 @@ export default function Sidebar({}) {
                     </div>
                     <div className={styles["sidebar-item-list"]}>
                         <a href={"/"}>🏠 Home</a>
+                        <a href={"/about"}>👨‍🚀 About Me</a>
                         <a href={"/plants"}>🌱 My Plants</a>
                         <a href={"/projects"}>🔨 My Projects</a>
                     </div>
