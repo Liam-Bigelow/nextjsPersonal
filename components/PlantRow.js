@@ -10,11 +10,11 @@ export default function PlantRow({title, image, plantKey}) {
         <div>
             <div className={styles["plant-row"]}>
                 <div className="row" style={{margin: "10px 10px 0 10px"}}>
-                    <div className="col s3">
+                    <div className="col s12 m3">
                         {/* image of plant */}
                         <img src={image} className={styles["plant-img"]} />
                     </div>
-                    <div className="col s9" style={{backgroundColor: "#fff", height: "100%", padding: "15px"}}>
+                    <div className="col s12 m9" style={{backgroundColor: "#fff", height: "100%", padding: "15px"}}>
                         {/* graph of plant health */}
                         <PlantMonitorChart plantKey={plantKey} />
                     </div>
