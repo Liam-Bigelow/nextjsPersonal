@@ -3,7 +3,6 @@
 .about-page {
     background-color: #FCBC49;
     display: flex;
-    flex-grow: 1;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
@@ -13,8 +12,6 @@
     background-color: #ffff;
     border: 5px solid #1f5c70;
     border-radius: 3px;
-    display: flex;
-    margin: 15px;
 }
 
 .about-image {
@@ -26,4 +23,14 @@
     font-size: 1.5rem;
     font-weight: 500;
     max-width: 600px;
+}
+
+.socials {
+    display: inline-flex;
+    width: 100%;
+    justify-content: end;
+}
+
+.socials a {
+    margin: 5px;
 }
