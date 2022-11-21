@@ -8,10 +8,10 @@ import PlantRow from '@components/PlantRow'
 export default function PlantPage() {
 
     const [plants, setPlants] = useState([
-        {image: "./haworthsAenium.jpg", title: "Haworth's Aenium", plantKey: "HaworthsAenium" },
-        {image: "./songOfIndia.jpg", title: "Song of India", plantKey: "SongOfIndia" },
-        {image: "./alliumStrictum.jpg", title: "Allium Strictum", plantKey: "AlliumStrictum" },
-        {image: "./chineseMoneyPlant.jpg", title: "Chinese Money Plant", plantKey: "ChineseMoneyPlant"},
+        {image: "./haworthsAenium.webp", title: "Haworth's Aenium", plantKey: "HaworthsAenium" },
+        {image: "./songOfIndia.webp", title: "Song of India", plantKey: "SongOfIndia" },
+        {image: "./alliumStrictum.webp", title: "Allium Strictum", plantKey: "AlliumStrictum" },
+        {image: "./chineseMoneyPlant.webp", title: "Chinese Money Plant", plantKey: "ChineseMoneyPlant"},
     ])
 
 
@@ -26,7 +26,7 @@ export default function PlantPage() {
 
             <h3 style={{fontWeight: 700}}><span>v1.0</span> - First Attempt 🎍</h3>
             <div className={styles["plant-v1"]}>
-                <img src="/plantMonitorV1.jpg" />
+                <img src="/plantMonitorV1.webp" />
                 <div>
                     <p>Here is my first attempt at building an autimated plant waterer. It consisted of a Arduino Uno, Moisture sensor, Accelerometer, 3 Mini Pumps, an LCD Display, a Relay, a water level sensor, and finally alot of cables.</p>
                     <p>What I learned from this build was that it is very hard to get an accurate read of the moisture level of a pot of soil without having a very long moisture sensor. I also learned that using a rule for activating the pumps such as</p>

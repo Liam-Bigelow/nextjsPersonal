@@ -9,7 +9,7 @@ export default function AboutPage() {
     return (
         <div className={styles["about-page"]}>
             <div className={styles["about-container"]}>
-                <img className={styles["about-image"]} src={"./me.jpg"} alt="me" />
+                <img className={styles["about-image"]} src={"./me.webp"} alt="me" />
 
                 <div className={styles["about-text"]}>
                     Hey,<br/>

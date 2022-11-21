@@ -7,9 +7,9 @@ import styles from './ProjectsPage.module.css'
 export default function ProjectsPage() {
 
     const [projects, setProjects] = useState([
-        {image: "./RasPiArcade1.jpg", hover: "./RasPiArcade2.jpg", title: "Raspberry Pi Arcade", description: "This was the project that got me seriously interested in computer science. I had bought all the buttons, joysticks, cables, and controller boards and had a blast assembling it all." },
-        {image: "./ElectricBoard1.jpg", hover: "./ElectricBoard2.jpg", title: "Electric LongBoard", description: "When I was younger my brother and I were super into longboarding. As I've aged a bit I've stopped bombing hills and doing slides but still enjoy cruising by the river or around parks on my Electric Longboard." },
-        {image: "./Charcuterie1.jpg", hover: "./Charcuterie2.jpg", title: "Charcuterie Set", description: "." },
+        {image: "./RasPiArcade1.webp", hover: "./RasPiArcade2.webp", title: "Raspberry Pi Arcade", description: "This was the project that got me seriously interested in computer science. I had bought all the buttons, joysticks, cables, and controller boards and had a blast assembling it all." },
+        {image: "./ElectricBoard1.webp", hover: "./ElectricBoard2.webp", title: "Electric LongBoard", description: "When I was younger my brother and I were super into longboarding. As I've aged a bit I've stopped bombing hills and doing slides but still enjoy cruising by the river or around parks on my Electric Longboard." },
+        {image: "./Charcuterie1.webp", hover: "./Charcuterie2.webp", title: "Charcuterie Set", description: "." },
     ])
 
 
