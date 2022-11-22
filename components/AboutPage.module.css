@@ -12,6 +12,8 @@
     background-color: #ffff;
     border: 5px solid #1f5c70;
     border-radius: 3px;
+    margin: 50px 25px;
+    max-width: 1200px;
 }
 
 .about-image {
@@ -22,7 +24,6 @@
     padding: 25px;
     font-size: 1.5rem;
     font-weight: 500;
-    max-width: 600px;
 }
 
 .socials {
@@ -32,5 +33,6 @@
 }
 
 .socials a {
-    margin: 5px;
+    margin: 0px 5px;
+    font-size: 35px;
 }
