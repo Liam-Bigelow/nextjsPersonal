@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 
 import styles from './StatsPage.module.css'
 
+import Choropleth from '@components/Choropleth'
+
 
 export default function StatsPage() {
 
@@ -43,6 +45,9 @@ export default function StatsPage() {
                 <aside className={styles["stat-card"]}>
                     <span className={styles["title"]}>Page Visits</span>
                     <span className={styles["stat"]}>{visits}</span>
+                </aside>
+                <aside className={`${styles["stat-card"]} col s12`}>
+                    <Choropleth />
                 </aside>
             </div>
         </div>

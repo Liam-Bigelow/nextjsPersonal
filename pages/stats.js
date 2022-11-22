@@ -24,7 +24,7 @@ export default function Stats() {
                     city: payload.location.city,
                     lat: payload.location.latitude,
                     lng: payload.location.longitude,
-                    region: payload.location.region.code,
+                    region: payload.location.region.name,
                     postal: payload.location.postal,
                     continent: payload.location.continent.code
                 })
