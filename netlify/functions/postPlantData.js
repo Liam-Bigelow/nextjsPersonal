@@ -35,8 +35,8 @@ export const handler = async (event) => {
         }
 
         // query database
-        const database = (await clientPromise).db(process.env.MONGODB_DATABASE);
-        const collection = database.collection(process.env.MONGODB_COLLECTION);
+        const database = (await clientPromise).db(process.env.READS_DATABASE);
+        const collection = database.collection(process.env.READS_COLLECTION);
         const results = await collection.insertOne(newDoc);
 
         // return standard http response
