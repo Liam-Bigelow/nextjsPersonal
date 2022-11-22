@@ -41,7 +41,7 @@ export default function StatsPage() {
         <div className={styles["stats-page"]}>
             <div className="row">
                 <aside className={styles["stat-card"]}>
-                    <span className={styles["title"]}>Page Visited</span>
+                    <span className={styles["title"]}>Page Visits</span>
                     <span className={styles["stat"]}>{visits}</span>
                 </aside>
             </div>
