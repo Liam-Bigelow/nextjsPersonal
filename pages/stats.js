@@ -26,7 +26,7 @@ export default function Stats() {
                     lng: payload.location.longitude,
                     region: payload.location.region.code,
                     postal: payload.location.postal,
-                    continent: payload.location.code
+                    continent: payload.location.continent.code
                 })
             })
             .catch( (error) => {
