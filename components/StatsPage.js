@@ -19,7 +19,7 @@ export default function StatsPage() {
 
     useEffect( () => {
         if( tempVisits > 0 ) {
-            const speed = 200;
+            const speed = 50;
             const duration = 1000;
             const amountOfIterations = duration / speed;
             var iteration = 1;
