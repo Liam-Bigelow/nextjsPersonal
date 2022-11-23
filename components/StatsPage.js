@@ -20,6 +20,17 @@ export default function StatsPage() {
     }, []);
 
 
+    const [dayOfWeek, setDayOfWeek] = useState( "" );
+
+    useEffect(() => {
+        fetch(`/api/getStatsPageDayOfWeek`)
+            .then(res => res.text())
+            .then( popularDayOfWeek => {
+                setDayOfWeek( popularDayOfWeek );
+            })
+    }, []);
+
+
     const [ chartToken, setChartToken ] = useState( null );
 
     useEffect(() => {
@@ -57,10 +68,16 @@ export default function StatsPage() {
     return (
         <div className={styles["stats-page"]}>
             <div style={{justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "column"}}>
-                <aside className={`${styles["stat-card"]}`}>
-                    <span className={styles["title"]}>Page Visits</span>
-                    <span className={styles["stat"]}>{visits}</span>
-                </aside>
+                <div style={{justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "row"}}>
+                    <aside className={`${styles["stat-card"]}`}>
+                        <span className={styles["title"]}>Page Visits</span>
+                        <span className={styles["stat"]}>{visits}</span>
+                    </aside>
+                    <aside className={`${styles["stat-card"]}`}>
+                        <span className={styles["title"]}>Mostly Viewed On</span>
+                        <span className={styles["stat"]}>{dayOfWeek}</span>
+                    </aside>
+                </div>
                 <aside className={`${styles["stat-card"]}`}>
                     {
                         !!chartToken ?
