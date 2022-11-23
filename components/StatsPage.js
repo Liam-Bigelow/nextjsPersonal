@@ -20,18 +20,6 @@ export default function StatsPage() {
             })
     }, []);
 
-
-    const [dayOfWeek, setDayOfWeek] = useState( "" );
-
-    useEffect(() => {
-        fetch(`/api/getStatsPageDayOfWeek`)
-            .then(res => res.text())
-            .then( popularDayOfWeek => {
-                setDayOfWeek( popularDayOfWeek );
-            })
-    }, []);
-
-
     useEffect( () => {
         if( tempVisits > 0 ) {
             const speed = 50;
@@ -51,6 +39,20 @@ export default function StatsPage() {
             updateCount();
         }
     }, [tempVisits]);
+
+
+    
+    const [dayOfWeek, setDayOfWeek] = useState( "" );
+
+    useEffect(() => {
+        fetch(`/api/getStatsPageDayOfWeek`)
+            .then(res => res.text())
+            .then( popularDayOfWeek => {
+                setDayOfWeek( popularDayOfWeek );
+            })
+    }, []);
+
+
 
     return (
         <div className={styles["stats-page"]}>
