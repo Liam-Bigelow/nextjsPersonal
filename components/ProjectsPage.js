@@ -1,17 +1,31 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styles from './ProjectsPage.module.css'
 
+import Spinner from "@components/Spinner";
+
 
 export default function ProjectsPage() {
+
+    const [imageRendered, setImageRendered] = useState(false);
 
     const [projects, setProjects] = useState([
         {image: "./RasPiArcade1.webp", hover: "./RasPiArcade2.webp", title: "Raspberry Pi Arcade", description: "This was the project that got me seriously interested in computer science. I had bought all the buttons, joysticks, cables, and controller boards and had a blast assembling it all." },
         {image: "./ElectricBoard1.webp", hover: "./ElectricBoard2.webp", title: "Electric LongBoard", description: "When I was younger my brother and I were super into longboarding. As I've aged a bit I've stopped bombing hills and doing slides but still enjoy cruising by the river or around parks on my Electric Longboard." },
         {image: "./Charcuterie1.webp", hover: "./Charcuterie2.webp", title: "Charcuterie Set", description: "." },
-    ])
+    ]);
 
+    useEffect( () => {
+        const setImgRenderedFunc = () => {
+            setImageRendered( true );
+        }
+        setTimeout( setImgRenderedFunc, 1 * 1000 );
+
+        return () => {
+            clearTimeout( setImgRenderedFunc );
+        }
+    });
 
     return (
         <div>
@@ -26,13 +40,16 @@ export default function ProjectsPage() {
                 { 
                     projects.map( (pr) => {
                         return (
-                            <section className="col s12 m10 l6" style={{padding: "0 !important"}}>
+                            <section key={pr.title} className="col s12 m10 l6" style={{padding: "0 !important"}}>
                                 <div className={styles["project-card"]}>
                                     <h4 className={styles["project-title"]}>{pr.title}</h4>
-                                    <div className={styles["project-img-wrapper"]}>
-                                        <img src={pr.image} className={styles["project-img"]} />
+                                    <div className={styles["project-img-wrapper"]} hidden={!imageRendered}>
+                                        <img src={pr.image} className={styles["project-img"]}/>
                                         <img src={pr.hover} className={styles["project-img-hover"]} />
                                     </div>
+                                    {!imageRendered &&
+                                        <Spinner />
+                                    }
                                     <p>{pr.description}</p> 
                                 </div>
                             </section>
