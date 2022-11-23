@@ -32,20 +32,6 @@ export default function StatsPage() {
     }, []);
 
 
-    const [ chartToken, setChartToken ] = useState( null );
-
-    useEffect(() => {
-        fetch(`/api/getChartsToken`)
-            .then(res => res.text())
-            .then( chtTkn => {
-                setChartToken( chtTkn );
-            })
-            .catch( (error) => {
-                console.error( error );
-            })
-    }, []);
-
-
     useEffect( () => {
         if( tempVisits > 0 ) {
             const speed = 50;
@@ -69,7 +55,7 @@ export default function StatsPage() {
     return (
         <div className={styles["stats-page"]}>
             <div style={{justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "column"}}>
-                <div style={{justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "row"}}>
+                <div style={{justifyContent: "center", display: "flex"}}>
                     <aside className={`${styles["stat-card"]}`}>
                         <span className={styles["title"]}>Page Visits</span>
                         <span className={styles["stat"]}>{visits}</span>
@@ -86,11 +72,7 @@ export default function StatsPage() {
                     </aside>
                 </div>
                 <aside className={`${styles["stat-card"]}`}>
-                    {
-                        !!chartToken ?
-                            <Choropleth token={chartToken} height={"400px"} width={"90vw"}/> :
-                            <div style={{height: "400px"}}></div>
-                    }
+                    <Choropleth height={"400px"} /> :
                 </aside>
             </div>
         </div>

@@ -3,12 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
 import Spinner from "@components/Spinner";
 
-export default function Choropleth({token, width, height}) {
+export default function Choropleth({width, height}) {
     const sdk = new ChartsEmbedSDK({
 		baseUrl: "https://charts.mongodb.com/charts-plantmonitor-tpctw",
-        getUserToken: () => {
-            return token
-        }
 	});
 	const choroplethRef = useRef(null);
 	const [rendered, setRendered] = useState(false);
@@ -28,8 +25,8 @@ export default function Choropleth({token, width, height}) {
 
     return (
         <>
-            { rendered && <Spinner /> }
-            <div ref={choroplethRef}></div>
+            { !rendered && <Spinner /> }
+            <div ref={choroplethRef} hidden={!rendered} style={{minWidth: "75vw", width: "100%", maxWidth: "750px"}}></div>
         </>
     )
 }
