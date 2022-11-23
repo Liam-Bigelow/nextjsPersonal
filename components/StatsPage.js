@@ -16,7 +16,7 @@ export default function StatsPage() {
         fetch(`/api/getStatsPageVisits`)
             .then(res => res.text())
             .then( pageVisits => {
-                setTempVisits( pageVisits +1 ); // +1 for current visit
+                setTempVisits( parseInt( pageVisits ) +1 ); // +1 for current visit
             })
     }, []);
 
