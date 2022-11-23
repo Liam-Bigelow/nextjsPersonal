@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 
 import styles from './StatsPage.module.css'
 
-import Choropleth from '@components/Choropleth'
+import Choropleth from '@components/Choropleth';
+import Spinner from '@components/Spinner';
 
 
 export default function StatsPage() {
@@ -75,7 +76,13 @@ export default function StatsPage() {
                     </aside>
                     <aside className={`${styles["stat-card"]}`}>
                         <span className={styles["title"]}>Mostly Viewed On</span>
-                        <span className={styles["stat"]}>{dayOfWeek}</span>
+                        <span className={styles["stat"]}>
+                            {
+                                !!dayOfWeek ? 
+                                    dayOfWeek:
+                                    <Spinner />
+                            }
+                        </span>
                     </aside>
                 </div>
                 <aside className={`${styles["stat-card"]}`}>
