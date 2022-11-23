@@ -56,16 +56,15 @@ export default function StatsPage() {
 
     return (
         <div className={styles["stats-page"]}>
-            <div className="row">
-                <aside className={styles["stat-card"]}>
+            <div style={{justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "column"}}>
+                <aside className={`${styles["stat-card"]}`}>
                     <span className={styles["title"]}>Page Visits</span>
                     <span className={styles["stat"]}>{visits}</span>
                 </aside>
-                <aside className={`${styles["stat-card"]} col s12`}>
-                    {chartToken}
+                <aside className={`${styles["stat-card"]}`}>
                     {
                         !!chartToken ?
-                            <Choropleth token={chartToken} height={"400px"} /> :
+                            <Choropleth token={chartToken} height={"400px"} width={"90vw"}/> :
                             <div style={{height: "400px"}}></div>
                     }
                 </aside>

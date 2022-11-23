@@ -1,6 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
+import Spinner from "@components/Spinner";
 
 export default function Choropleth({token, width, height}) {
     const sdk = new ChartsEmbedSDK({
@@ -14,8 +15,6 @@ export default function Choropleth({token, width, height}) {
 	const [chart] = useState(
 		sdk.createChart({
 			chartId: "637cfab2-9518-405c-8fb8-b81f0560037e",
-            width: "100%",
-            height: "100%",
             ...( !!width ) ? { width: width }: {},
             ...( !!height ) ? { height: height }: {},
 		})
@@ -28,6 +27,9 @@ export default function Choropleth({token, width, height}) {
 	}, [chart]);
 
     return (
-        <div ref={choroplethRef}></div>
+        <>
+            { rendered && <Spinner /> }
+            <div ref={choroplethRef}></div>
+        </>
     )
 }

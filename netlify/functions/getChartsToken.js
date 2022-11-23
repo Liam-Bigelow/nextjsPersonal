@@ -2,7 +2,9 @@
 const jwt = require("jsonwebtoken");
 
 export const handler = async (event) => {
-    const accessToken = jwt.sign({caller: "personal website"}, process.env.TOKEN_SECRET, {
+    console.log( "================================================");
+    console.log( process.env.TOKEN_SECRET);
+    const accessToken = jwt.sign({caller: "personal website"}, "topsecret", {
 		expiresIn: "24h",
 	});
     return {
