@@ -5,6 +5,7 @@
     color: #fff;
     padding: 15px;
     margin: 10px 10px 0 10px;
+    box-shadow: 0 1px 2px 0 rgb(48 48 48 / 30%), 0 1px 3px 1px rgb(48 48 48 / 15%);
 }
 
 .plant-tab {
@@ -15,6 +16,8 @@
     width: 230px;
     text-align: center;
     border-radius: 0  0  15px 15px;
+    border: 2px solid #1f5c70;
+    box-shadow: 0 1px 2px 0 rgb(48 48 48 / 30%), 0 1px 3px 1px rgb(48 48 48 / 15%);
 }
 
 .plant-img {
