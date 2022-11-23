@@ -65,7 +65,7 @@ export const handler = async (event) => {
         // query database
         const database = (await clientPromise).db(process.env.READS_DATABASE);
         const collection = database.collection(process.env.READS_COLLECTION);
-        const results = await collection.aggregate(aggregatePipeline).limit(10).toArray();
+        const results = await collection.aggregate(aggregatePipeline).toArray();
 
         // return standard http response
         return {
