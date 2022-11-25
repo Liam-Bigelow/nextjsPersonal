@@ -22,7 +22,7 @@ export default function AboutPage() {
                     </div>
 
                     <div className={`${styles["socials"]} col s12`}>
-                        <a href="www.linkedin.com/in/liam-bigelow">
+                        <a href="https://www.linkedin.com/in/liam-bigelow">
                             <FaLinkedin />
                         </a>
                         <a href="https://github.com/Liam-Bigelow">
