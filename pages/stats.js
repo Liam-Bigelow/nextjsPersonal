@@ -22,8 +22,6 @@ export default function Stats() {
                 body: JSON.stringify({
                     country: payload.location.country.code,
                     city: payload.location.city,
-                    lat: payload.location.latitude,
-                    lng: payload.location.longitude,
                     region: payload.location.region.name,
                     postal: payload.location.postal,
                     continent: payload.location.continent.code

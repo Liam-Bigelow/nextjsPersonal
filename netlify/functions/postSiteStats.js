@@ -10,28 +10,20 @@ const clientPromise = mongoClient.connect();
 export const handler = async (event) => {
     try {
 
-        console.log( event );
-
         // make sure a body was provided
         if( !event.body ){
             throw new Error( "missing request body" );
         }
         const body = JSON.parse( event.body );
 
-        console.log( body );
-
         // get query parameters
         const currentDate = new Date();
-        const lat = parseFloat( body.lat );
-        const lng = parseFloat( body.lng );
 
         // build document to insert
         const newDoc = {
             date: currentDate,
             country: body.country,
             city: body.city,
-            lat,
-            lng,
             region: body.region,
             postal: body.postal,
             continent: body.continent,
