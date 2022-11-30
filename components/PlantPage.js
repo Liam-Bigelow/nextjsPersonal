@@ -27,7 +27,7 @@ export default function PlantPage() {
             <h3 style={{fontWeight: 700}}><span>v1.0</span> - First Attempt 🎍</h3>
             <div className={`${styles["plant-v1"]} row`}>
                 <div className="col s12 m6">
-                    <img src="/plantMonitorV1.webp" style={{border: "10px solid #fcb649", width: "100%"}} />
+                    <img src="/plantMonitorV1.webp" style={{border: "10px solid #fcb649", width: "100%", boxShadow: "0 1px 2px 0 rgb(48 48 48 / 30%), 0 1px 3px 1px rgb(48 48 48 / 15%)"}} />
                 </div>
                 <div className="col s12 m6">
                     <p>Here is my first attempt at building an autimated plant waterer. It consisted of a Arduino Uno, Moisture sensor, Accelerometer, 3 Mini Pumps, an LCD Display, a Relay, a water level sensor, and finally alot of cables.</p>
