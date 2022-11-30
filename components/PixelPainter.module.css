@@ -1,0 +1,53 @@
+
+
+.pixel-page {
+    background-color: #FCBC49;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.pixel-container {
+    background-color: #ffff;
+    border: 5px solid #1f5c70;
+    border-radius: 3px;
+    margin: 50px 25px;
+    max-width: 1200px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pixel-canvas {
+    width: 80vw;
+    aspect-ratio: 10/7;
+    max-width: 750px;
+    cursor: pointer;
+}
+
+.canvas-guide {
+    display: grid;
+    pointer-events: none;
+    position: absolute;
+}
+  
+.canvas-guide div {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.paint-nav {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px;
+    border: 2px solid #1f5c70;
+    margin: 5px
+}
+
+
+.paint-nav input {
+    padding: 0px;
+    border: 0px;
+    width: 30px;
+}

@@ -44,6 +44,7 @@ export default function Sidebar({}) {
                         <a href={"/plants"}>🌱 My Plants</a>
                         <a href={"/projects"}>🔨 My Projects</a>
                         <a href={"/stats"}>😮 Verbose Page</a>
+                        <a href={"/pixel"}>🎨 Pixel Paint</a>
                     </div>
                 </div>
             </div>
