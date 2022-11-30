@@ -10,6 +10,8 @@ const clientPromise = mongoClient.connect();
 export const handler = async (event) => {
     try {
 
+        console.log( event );
+
         // make sure a body was provided
         if( !event.body ){
             throw new Error( "missing request body" );
@@ -25,9 +27,11 @@ export const handler = async (event) => {
                 y: parseInt( body.y ),
             },
             {
-                x: parseInt( body.x ),
-                y: parseInt( body.y ),
-                color: body.color
+                $set: {
+                    x: parseInt( body.x ),
+                    y: parseInt( body.y ),
+                    color: body.color
+                }
             },
             {
                 upsert: true,
