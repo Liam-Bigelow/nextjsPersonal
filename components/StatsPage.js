@@ -57,7 +57,7 @@ export default function StatsPage() {
     return (
         <div className={styles["stats-page"]}>
             <div style={{justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "column"}}>
-                <div style={{justifyContent: "center", display: "flex"}}>
+                <div style={{justifyContent: "center", display: "flex", flexWrap: "wrap"}}>
                     <aside className={`${styles["stat-card"]}`}>
                         <span className={styles["title"]}>Page Visits</span>
                         <span className={styles["stat"]}>{visits}</span>
