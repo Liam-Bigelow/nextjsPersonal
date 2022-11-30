@@ -23,6 +23,30 @@ export default function PixelPainter() {
       }
     }, [pixelCanvas]);
 
+    useEffect(() => {
+        if( pixelContext ){
+            fetch(`/api/getPaintPixels`)
+            .then(res => res.json())
+            .then( coloredPixels => {
+                for( const pix of coloredPixels ){
+                    pixelContext.fillStyle = pix.color;
+                    const pixelWidth = ( pixelCanvas.current.width / pixelDensity.width );
+                    const pixelHeight = ( pixelCanvas.current.height / pixelDensity.height );
+                    pixelContext.fillRect( 
+                        ( pix.x * pixelWidth ) + 0.5, 
+                        ( pix.y * pixelHeight ) + 0.5, 
+                        pixelWidth -1, 
+                        pixelHeight -0.75
+                    );
+                }
+                pixelContext.fillStyle = pixelColor;
+            })
+            .catch( (error) => {
+                console.error(error);
+            });
+        }
+    }, [pixelContext])
+
     const drawGrid = () => {
         canvasGuide.current.innerHTML = "";
         const rect = pixelCanvas.current.getBoundingClientRect();
@@ -64,7 +88,8 @@ export default function PixelPainter() {
             y: ( cellY * pixelHeight ) + 0.5, 
             width: pixelWidth -1, 
             height: pixelHeight -0.75, 
-            cellX, cellY };
+            cellX, cellY 
+        };
     }
     
     const fillPixel = (event) => {
