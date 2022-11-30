@@ -39,12 +39,12 @@ export default function Sidebar({}) {
                         </button>
                     </div>
                     <div className={styles["sidebar-item-list"]}>
-                        <a href={"/"}>🏠 Home</a>
-                        <a href={"/about"}>👨‍🚀 About Me</a>
-                        <a href={"/plants"}>🌱 My Plants</a>
-                        <a href={"/projects"}>🔨 My Projects</a>
-                        <a href={"/stats"}>😮 Verbose Page</a>
-                        <a href={"/pixel"}>🎨 Pixel Paint</a>
+                        <a href={"/"}>🏠<span>Home</span></a>
+                        <a href={"/about"}>👨‍🚀<span>About Me</span></a>
+                        <a href={"/plants"}>🌱<span>My Plants</span></a>
+                        <a href={"/projects"}>🔨<span>My Projects</span></a>
+                        <a href={"/stats"}>😮<span>Verbose Page</span></a>
+                        <a href={"/pixel"}>🎨<span>Pixel Paint</span></a>
                     </div>
                 </div>
             </div>
