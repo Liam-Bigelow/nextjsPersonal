@@ -37,3 +37,7 @@
     margin: 0px 5px;
     font-size: 35px;
 }
+
+.socials a:hover {
+    color: #FBA01D;
+}
