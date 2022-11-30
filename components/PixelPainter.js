@@ -58,7 +58,7 @@ export default function PixelPainter() {
         const pixelWidth = ( pixelCanvas.current.width / pixelDensity.width );
         const pixelHeight = ( pixelCanvas.current.height / pixelDensity.height );
 
-        return { x: cellX * pixelWidth, y: cellY * pixelHeight, width: pixelWidth, height: pixelHeight };
+        return { x: cellX * pixelWidth, y: cellY * pixelHeight, width: pixelWidth, height: pixelHeight, cellX, cellY };
     }
     
     const fillPixel = (event) => {
@@ -66,6 +66,22 @@ export default function PixelPainter() {
         pixelContext.fillRect( 
             offsetCoord.x, offsetCoord.y, offsetCoord.width, offsetCoord.height
         );
+
+        // save pixel to db
+        fetch(`/api/postPaintPixel`, {
+            method: 'POST',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify({
+                x: offsetCoord.cellX,
+                y: offsetCoord.cellY,
+                color: pixelColor
+            })
+        })
+        .catch( (error) => {
+            console.error( error );
+        });
     }
 
     return (
