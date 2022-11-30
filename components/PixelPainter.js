@@ -58,7 +58,13 @@ export default function PixelPainter() {
         const pixelWidth = ( pixelCanvas.current.width / pixelDensity.width );
         const pixelHeight = ( pixelCanvas.current.height / pixelDensity.height );
 
-        return { x: cellX * pixelWidth, y: cellY * pixelHeight, width: pixelWidth, height: pixelHeight, cellX, cellY };
+        // NOTE: magic variables just make the block fit in the grid better
+        return { 
+            x: ( cellX * pixelWidth ) + 0.5, 
+            y: ( cellY * pixelHeight ) + 0.5, 
+            width: pixelWidth -1, 
+            height: pixelHeight -0.75, 
+            cellX, cellY };
     }
     
     const fillPixel = (event) => {
