@@ -37,7 +37,7 @@ export default function Stats() {
     return (
         <div>
             <Head>
-                <title>Liam Bigelow</title>
+                <title>Liam Bigelow | Verbose</title>
                 <link rel="icon" href="/favicon.ico" />
                 <link
                     rel="stylesheet"

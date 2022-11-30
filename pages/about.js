@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <div>
             <Head>
-                <title>Liam Bigelow</title>
+                <title>Liam Bigelow | About Me</title>
                 <link rel="icon" href="/favicon.ico" />
                 <link
                     rel="stylesheet"

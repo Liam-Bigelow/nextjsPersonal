@@ -10,7 +10,7 @@ export default function Projects() {
     return (
         <div>
             <Head>
-                <title>Liam Bigelow</title>
+                <title>Liam Bigelow | Projects</title>
                 <link rel="icon" href="/favicon.ico" />
                 <link
                     rel="stylesheet"

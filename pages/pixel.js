@@ -1,16 +1,17 @@
 import Head from "next/head";
 
-// pages
+
 import Sidebar from '@components/Sidebar'
-import PlantPage from '@components/PlantPage'
+import PixelPage from '@components/PixelPainter'
 
 
-export default function Plants() {
+export default function Home() {
+
 
     return (
         <div>
             <Head>
-                <title>Liam Bigelow | My Plants</title>
+                <title>Liam Bigelow | Pixel Painter</title>
                 <link rel="icon" href="/favicon.ico" />
                 <link
                     rel="stylesheet"
@@ -23,9 +24,7 @@ export default function Plants() {
 
             <main>
                 <Sidebar />
-                <section className="container">
-                    <PlantPage />
-                </section>
+                <PixelPage />
             </main>
         </div>
     );
