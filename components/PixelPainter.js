@@ -13,7 +13,7 @@ export default function PixelPainter() {
     }
 
     const [pixelContext, setPixelContext] = useState( null );
-    const [pixelColor, setPixelColor] = useState( "#0000" );
+    const [pixelColor, setPixelColor] = useState( "#000000" );
     const pixelCanvas = useRef( null );
     const canvasGuide = useRef( null );
     const [guideDrawn, setGuideDrawn] = useState( false );
@@ -94,6 +94,7 @@ export default function PixelPainter() {
     
     const fillPixel = (event) => {
         const offsetCoord = getPositionOnCanvas( event );
+        console.log( pixelContext );
         pixelContext.fillRect( 
             offsetCoord.x, offsetCoord.y, offsetCoord.width, offsetCoord.height
         );
